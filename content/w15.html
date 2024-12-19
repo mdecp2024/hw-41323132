@@ -169,7 +169,20 @@ print("從 1 累加到 100 的總和是:", result)
 </pre>
 <p></p>
 <p></p>
-<p>第三題 <a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/fee1263a43e6587dccd5c40085b6af69/raw/2340d0fdb41da01704844a585e4bd66992f26898/EX-3.py">add_only_even </a></p><br />w7 << <a href='w7.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p>第三題 <a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/fee1263a43e6587dccd5c40085b6af69/raw/2340d0fdb41da01704844a585e4bd66992f26898/EX-3.py">add_only_even</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_only_even
+def add_only_even(start, end):
+    total_sum = 0
+    for i in range(start, end + 1):
+        if i % 2 == 0:  # 如果數字是偶數
+            total_sum += i
+    return total_sum
+
+# 呼叫函式 add_only_even，並輸出結果
+result = add_only_even(1, 100)
+print("從 1 到 100 累加的偶數總和是:", result)
+</pre>
+<p></p><br />w7 << <a href='w7.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
