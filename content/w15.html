@@ -189,25 +189,19 @@ print(f"從 {start} 到 {end} 的偶數總和是: {result}")
 </pre>
 <p></p>
 <p></p>
-<p>第四題 <a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/523a22fe1aac3978b8cc74e1b7096f19/raw/9eea0bbeca810ac49a6449aae374ff788bf696a3/EX-4.py">add_avoid_8</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義函式 add_avoid_8，接受兩個參數 start 和 end
-def add_avoid_8(start, end):
-    total_sum = 0
-    # 使用 for 迴圈遍歷從 start 到 end 的所有數字
-    for i in range(start, end + 1):
-        # 檢查數字中是否包含 "8"
-        if '8' not in str(i):
-            total_sum += i  # 累加不包含 "8" 的數字
-    return total_sum
-
-# 讓用戶輸入起始值和結束值
-start = int(input("請輸入起始整數: "))
-end = int(input("請輸入結束整數: "))
-
-# 呼叫函式並輸出結果
-result = add_avoid_8(start, end)
-print(f"從 {start} 到 {end} 避開包含 '8' 的數字後的總和是: {result}")
-</pre>
+<p>第四題<a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/523a22fe1aac3978b8cc74e1b7096f19/raw/07be0f0a4cf891225e281930f9baaff822497357/EX-4.py"> add_avoid_8</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def add_avoid_8(start, end):
+    total = 0
+    for num in range(start, end + 1):
+        if '8' not in str(num):  # 檢查數字是否包含 "8"
+            total += num
+    return total
+ 
+# 呼叫函式，計算從 1 加到 100 並避免數字包含 "8" 的總和
+total = add_avoid_8(1, 100)
+ 
+# 印出計算結果
+print(total)  # 輸出避開 "8" 的總和結果</pre>
 <p></p><br />w7 << <a href='w7.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
