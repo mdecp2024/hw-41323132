@@ -634,7 +634,66 @@ ctx.fill()</pre>
 <p></p>
 <h3>w16_exam2</h3>
 <p><a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/1c1cfb60d9897f737347081730df7eb9/raw/4924bc10f52197cc54afc747b249a19580c3800d/w16_exam2.py">迷宮</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 設定迷宮畫布大小
+canvas = html.CANVAS(width=300, height=300)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 標示左上方點座標 (31, 32)
+ctx.font = "12px Arial"
+ctx.fillStyle = "red"
+ctx.fillText("(31, 32)", 35, 22)
+
+# 定義藍色線條的屬性
+ctx.strokeStyle = "blue"
+ctx.lineWidth = 2
+
+# 設定迷宮起點的偏移量
+offset_x, offset_y = 31, 32
+
+# 迷宮的線條座標，這些可以在列表中定義，便於後期維護
+maze_lines = [
+    # 每個元素為一組座標對，表示從哪個點到哪個點
+    ((0, 0), (86, 0)),
+    ((0, 0), (0, 200)),
+    ((120, 0), (200, 0)),
+    ((200, 0), (200, 200)),
+    ((120, 200), (200, 200)),
+    ((0, 200), (86, 200)),
+    ((86, 157), (86, 200)),
+    ((86, 157), (126, 157)),
+    ((160, 120), (160, 200)),
+    ((160, 120), (50, 120)),
+    ((50, 120), (50, 163)),
+    ((126, 80), (126, 120)),
+    ((0, 80), (86, 80)),
+    ((86, 40), (86, 80)),
+    ((40, 40), (160, 40)),
+    ((160, 40), (160, 83)),
+]
+
+# 使用輔助函數來簡化畫線的過程
+def draw_line(start, end):
+    ctx.moveTo(offset_x + start[0], offset_y + start[1])
+    ctx.lineTo(offset_x + end[0], offset_y + end[1])
+
+# 開始繪製迷宮
+ctx.beginPath()
+
+# 遍歷迷宮的每條線，繪製出來
+for start, end in maze_lines:
+    draw_line(start, end)
+
+# 結束繪製
+ctx.stroke()
+</pre>
+<p><br/><br/></p>
 <p></p>
 <p></p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
