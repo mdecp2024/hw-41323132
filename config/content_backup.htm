@@ -540,9 +540,89 @@ print(f"從 {start} 到 {end} 的數字總和（排除包含 '3' 和 '8' 的數�
 <p></p>
 <p></p>
 <h3>w16_exam1</h3>
-<p></p>
-<p><iframe allowfullscreen="allowfullscreen" height="314" src="//www.youtube.com/embed/lQWBGlvPy3g" width="560"></iframe></p>
-<p><a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/18fe5592a14dc426a552434d6c3bc38c/raw/221fd6e0e804eba1ed181db80fcabeacb9308383/w16_exam1.py">"圖形"</a></p>
+<p><a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/18fe5592a14dc426a552434d6c3bc38c/raw/221fd6e0e804eba1ed181db80fcabeacb9308383/w16_exam1.py">圖形</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width=500, height=500)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 取得 canvas 的繪圖上下文
+ctx = canvas.getContext("2d")
+
+# 畫出 X 軸
+ctx.beginPath()
+ctx.strokeStyle = 'black'
+ctx.lineWidth = 2
+ctx.moveTo(31, 32)  # 原點
+ctx.lineTo(400, 32)  # 向右延伸
+ctx.stroke()
+
+# 畫出 Y 軸
+ctx.beginPath()
+ctx.moveTo(31, 32)  # 原點
+ctx.lineTo(31, 400)  # 向下延伸
+ctx.stroke()
+
+# 標示原點座標
+ctx.font = "12px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("(31, 32)", 35, 45)
+
+# 位移偏移量，將原點 (31, 32) 作為新的繪圖基準
+offset_x = 31
+offset_y = 32
+
+# 畫橙色六邊形
+ctx.beginPath()
+ctx.fillStyle = "#F47920"
+ctx.moveTo(offset_x + 40, offset_y + 63)
+ctx.lineTo(offset_x + 60, offset_y + 33)
+ctx.lineTo(offset_x + 90, offset_y + 33)
+ctx.lineTo(offset_x + 110, offset_y + 63)
+ctx.lineTo(offset_x + 90, offset_y + 93)
+ctx.lineTo(offset_x + 60, offset_y + 93)
+ctx.closePath()
+ctx.fill()
+
+# 畫綠色菱形
+ctx.beginPath()
+ctx.fillStyle = "#009F95"
+ctx.moveTo(offset_x + 130, offset_y + 63)
+ctx.lineTo(offset_x + 150, offset_y + 33)
+ctx.lineTo(offset_x + 170, offset_y + 63)
+ctx.lineTo(offset_x + 150, offset_y + 93)
+ctx.closePath()
+ctx.fill()
+
+# 藍色三角形 (頂點在菱形右側，方向朝下)
+ctx.beginPath()
+ctx.fillStyle = "#40B4CB"
+ctx.moveTo(offset_x + 174, offset_y + 63)  # 頂點在菱形右側
+ctx.lineTo(offset_x + 154, offset_y + 93)  # 左下角
+ctx.lineTo(offset_x + 194, offset_y + 93)  # 右下角
+ctx.closePath()
+ctx.fill()
+
+# 畫粉紅色圓形
+ctx.beginPath()
+ctx.fillStyle = "#EB008B"
+ctx.arc(offset_x + 220, offset_y + 63, 20, 0, 2 * 3.14159)
+ctx.fill()
+
+# 畫黃色正方形
+ctx.beginPath()
+ctx.fillStyle = "#FDD56A"
+ctx.rect(offset_x + 260, offset_y + 43, 40, 40)
+ctx.fill()
+
+# 畫藍色矩形
+ctx.beginPath()
+ctx.fillStyle = "#003A70"
+ctx.rect(offset_x + 320, offset_y + 53, 60, 20)
+ctx.fill()</pre>
 <p></p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
@@ -550,7 +630,12 @@ print(f"從 {start} 到 {end} 的數字總和（排除包含 '3' 和 '8' 的數�
 <h2>HW 3 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>HW 4</h1>
+<p></p>
+<p></p>
+<h3>w16_exam2</h3>
+<p></p>
+<p></p>
+<p></p><h1>HW 4</h1>
 <h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
 <p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
 <p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
