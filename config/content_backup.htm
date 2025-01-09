@@ -197,7 +197,34 @@ print ("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</
 <p>動物清單： 程式列出所有動物及其位置。</p>
 <p>特定條件判斷： 當觀察到目標動物時，輸出特別的訊息，強調目標。</p>
 <p>靈活性： 清單和<span> </span><code>wanted_to_see</code><span> </span>都可以改變，程式可適應新的資料。</p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義動物清單
+animals = ["giraffe", "penguin", "dolphin"]
+  
+print (animals) # 輸出：['giraffe', 'penguin', 'dolphin']
+  
+# 使用for迴圈，變數 i 從 0 遍歷到清單的長度減 1
+# for each position in the list
+for i in range (0, len(animals)):
+print ("-- Beginning of loop --")
+# print each element and its position
+print ("The element in position " + str(i) + " is " + animals[i])
+  
+# 定義目標動物
+wanted_to_see = "penguin"
+  
+# 使用for迴圈遍歷清單
+# for each position in the list
+for i in range (0, len(animals)):
+# if the current animal is what you really wanted to see
+if animals[i] == wanted_to_see:
+# print out that that's the animal you really wanted to see
+print ("I saw a " + animals[i] + " and I really wanted to see it!") # 輸出：I saw a &lt;動物&gt; and I really wanted to see it!
+# if the current animal is not what you really wanted to see
+else:
+# just print out that you saw it
+print ("I saw a " + animals[i]) # 輸出：I saw a &lt;動物&gt;
+</pre>
+<p><br/><br/></p>
 </div><h3>w13 hw</h3>
 <!-- 引入 Brython 程式庫 -->
 <script src="/static/brython.js"></script>
