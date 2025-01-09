@@ -234,6 +234,35 @@ print (house) # NameError: name 'house' is not</pre>
 <p>動態處理更大範圍的清單。</p>
 <p>增加錯誤處理（如清單長度不一致）。</p>
 <p>整合更靈活的字串處理方式（如使用<span> </span><code>zip</code><span> </span>或<span> </span><code>f-string</code>）。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 定義朋友的名字
+friends = ["Geetha", "Luca", "Daisy", "Juhan"]
+  
+# 定義不同食物
+dishes = ["sushi", "burgers", "tacos", "pizza"]
+  
+print ("My friends' names are:") # 輸出：(My friends' names are:)
+  
+print (friends) # 列印friends清單：['Geetha', 'Luca', 'Daisy', 'Juhan']
+  
+# 使用for迴圈，變數 index 從 0 到 3（包含 0，不包含 4）
+for index in range (0,4):
+print ("index: " + str(index))
+print ("friend: " + friends[index])
+  
+# 列印食物清單
+print ("Their favorite dishes are:") # 輸出：Their favorite dishes are:
+  
+print (dishes) # 列印dishes清單：['sushi', 'burgers', 'tacos', 'pizza']
+  
+# 用迴圈逐一打印每種食物及其索引
+for index in range (0,4):
+print ("index: " + str(index))
+print ("dish: " + dishes[index])
+  
+# 配對朋友和食物並打印
+for index in range (0,4):
+print ("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</pre>
+<p></p>
 </div><br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13 hw.html'>Next</a> >> w13 hw</div>
         
     <!-- footer -->
