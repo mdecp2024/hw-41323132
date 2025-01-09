@@ -300,7 +300,71 @@ print ("I saw a " + animals[i]) # 輸出：I saw a &lt;動物&gt;
 <p><span>範例程式:<a href="https://mdecp2024.github.io/hw-41323132/content/Brython.html?src=https://gist.githubusercontent.com/41323132/c169b90ff866140d29060a015ed99013/raw/09b7c2b173f67f62b3ee9c2a3ca7458e024f5da3/Ex10.py">程式</a></span></p>
 <p>清單遍歷與條件篩選： 通過<span> </span><code>for</code><span> </span>迴圈遍歷配件清單，並使用條件語句來過濾出長度為特定數字的配件，或者根據位置篩選出符合條件的配件。</p>
 <p>動態條件設定： 使用變數設定閾值（如長度或位置），使得程式在不同情況下可靈活運作。</p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 輸出每個配件的名稱及其位置
+accessories = ["belt", "hat", "gloves", "sunglasses", "ring"] # 列印每個配件的名稱以及它在清單中的位置
+print (accessories)
+# for each position in the list
+for i in range (len(accessories)):
+#print each elements and its position
+print ("The element " + accessories[i] + " is in position " + str(i))
+  
+# 輸出長度為 6 的配件
+# for each position in the list
+for i in range (len(accessories)):
+# if the length of the element equals 6
+if len(accessories[i]) == 6:
+# print the element, its position, and its number of characters
+print ("The element " + accessories[i] + " is in position " + str(i) + " and it has 6 characters")
+  
+# 輸出長度小於 6 的配件
+# for each position in the list
+for i in range (len(accessories)):
+# if the length of the element is less than 6
+if len(accessories[i]) &lt; 6:
+# print the element, its position, and its number of characters
+print ("The element " + accessories[i] + " is in position " + str(i) + " and it has less than 6 characters")
+# defining the threshold
+  
+# 輸出長度大於設定閾值 6 的配件
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+# if the length of the element is greater than the threshold
+if len(accessories[i]) &gt; n_of_characters:
+# print the element, its position, and its number of characters
+print ("The element " + accessories[i] + " is in position " + str(i) + " and it has more than " + str(n_of_characters) + " characters")
+# defining the threshold
+  
+# 輸出長度不等於設定閾值的配件
+n_of_characters = 6
+# for each position in the list
+for i in range (len(accessories)):
+# if the length of the element is not equal to the threshold
+if len(accessories[i]) != n_of_characters:
+# print the element, its position, and its number of characters
+print ("The element " + accessories[i] + " is in position " + str(i) + " and it has a number of characters different from " + str(n_of_characters))
+# defining the threshold
+  
+# 輸出位置小於或等於指定位置 2 的配件
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+# if the position of the element is less then or equal to to the threshold
+if i &lt;= position:
+# print the element, its position, and its position characteristic
+print ("The element " + accessories[i] + " is in position " + str(i) + ", which is less than or equal to " + str(position))
+# defining the threshold
+  
+# 輸出位置大於或等於指定位置 2 的配件
+position = 2
+# for each position in the list
+for i in range (len(accessories)):
+# if the position of the element is greater then or equal to to the threshold
+if i &gt;= position:
+# print the element, its position, and its position characteristic
+print ("The element " + accessories[i] + " is in position " + str(i) + ", which is at least " + str(position))
+</pre>
+<p><br/><br/></p>
 </div><br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='w13 hw.html'>Next</a> >> w13 hw</div>
         
     <!-- footer -->
